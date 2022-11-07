@@ -6,9 +6,11 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 18:59:46 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/10/30 19:05:23 by yaidriss         ###   ########.fr       */
+/*   Updated: 2022/11/07 19:46:21 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "so_long.h"
 
 void	handl_errors(int i)
 {

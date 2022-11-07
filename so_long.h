@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 15:49:53 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/04 19:39:27 by yaidriss         ###   ########.fr       */
+/*   Updated: 2022/11/07 19:51:04 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>    
-# include "minilibx/mlx.h"
+// # include "minilibx/mlx.h"
+# include "srcs/get_next_line.h"
 
 typedef struct map
 {
@@ -32,6 +33,7 @@ typedef struct map
 	int		size;
 	int		fd;
 	int		fd2;
+	char	*next;
 	void	*mlx;
 	void	*window;
 	void	*img;
@@ -59,11 +61,14 @@ typedef struct map
 //******** so_long.c **********************//
 int check_char(char buffer);
 int element_validation(t_map *map);
-int validtion(t_map* map);
+int validation(t_map* map);
 void fill_map(t_map *map);
 int border_validation(t_map *map);
+//!!*******  src ***********************!/
+char **ft_split(char const *str,char c);
+
 ///******* error.c ***********************//
-void error_handling(int i);
+void	handl_errors(int i);
 //******** print_map ********************//
 void print_map(t_map *map);
 //********* Path*************************//
@@ -97,7 +102,7 @@ void 	print_move(t_map *map);
 int 	locate_E(t_map *m);
 void 	death(int loc_p, int loc_e, int loc_en);
 int 	locate_exit(t_map *m);
-size_t	ft_strlen(const char *s);
+int		ft_strlen(char *s);
 void  	term(int p_loc, int e_loc, int en_loc);
 void 	ft_in(t_map *m, int hight, int width);
 char	*ft_itoa(int n);
