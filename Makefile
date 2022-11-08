@@ -27,7 +27,7 @@ re    : fclean all
 test  : re
 	@echo "\033[92m TESTING IN PRORGRESS...✅\033[0m"
 	@$(CC) so_long.c $(NAME)
-	@./a.out || cat -e
+	# @./a.out "test.bar" || cat -e
 
 1337_logo:
 

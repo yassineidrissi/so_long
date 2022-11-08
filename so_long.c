@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 15:50:09 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/07 19:45:20 by yaidriss         ###   ########.fr       */
+/*   Updated: 2022/11/08 17:59:44 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ int main(int ac, char **av)
 	i = 0;
 	t_map map;
 
-	map.fd = open(av[0],O_RDONLY);
+	map.fd = open(av[1],O_RDONLY);
 	if (map.fd < 0)
 		handl_errors(1);
 	fill_map(&map);
-	// validation(&map);
-	while(map.map[i])
-		printf("%s\n",map.map[i++]);
+	validation(&map);
+	// while(map.map[i])
+	// 	printf("%s\n",map.map[i++]);
 }
