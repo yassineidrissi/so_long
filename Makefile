@@ -9,7 +9,7 @@ RM  	    =    rm -rf
 
 
 %.o : %.c 
-	@$(CC) $(GFLAGS) -c $< -o $@ -I $(INCLUDE)  
+	@$(CC) -g $(GFLAGS) -c $< -o $@ -I $(INCLUDE)  
 
 $(NAME) : $(OBG)
 	@$(AR) $(NAME) $(OBG)
@@ -26,7 +26,7 @@ re    : fclean all
 
 test  : re
 	@echo "\033[92m TESTING IN PRORGRESS...✅\033[0m"
-	@$(CC) $(GFLAGS) so_long.c $(NAME)
+	@$(CC) -g so_long.c $(NAME)
 	# @./a.out "test.bar" || cat -e
 
 1337_logo:

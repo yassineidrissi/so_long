@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yaidriss <yaidriss@student1337.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 15:50:09 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/08 17:59:44 by yaidriss         ###   ########.fr       */
+/*   Updated: 2022/11/09 18:57:10 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 int main(int ac, char **av)
 {
 	(void)ac;
-	int i;
 
-	i = 0;
 	t_map map;
 
 	map.fd = open(av[1],O_RDONLY);

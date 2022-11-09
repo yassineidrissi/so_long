@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yaidriss <yaidriss@student1337.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 19:06:10 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/08 19:24:13 by yaidriss         ###   ########.fr       */
+/*   Updated: 2022/11/09 19:38:20 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ void	fill_map(t_map *map)
 void test_rectangular(t_map *map)
 {
 	int i;
+	int j;
 	
+	j = 0;
 	i = 0;
 	map->hight = 0;
 	while(map->map[map->hight])
@@ -37,25 +39,25 @@ void test_rectangular(t_map *map)
 	map->width = ft_strlen(map->map[0]);
 	while(map->map[i])
 		if(ft_strlen(map->map[i++]) == map->width)
-			;
-	if (i != map->hight)
-		handl_errors(2);
+			j++;
+	// printf("%d\n %d", j,map->hight);
+	if (j != map->hight)
+		handl_errors(3);
 }
 
 void test_walls(t_map *map)
 {
 	int i;
 
-	i = 0;
-	while(map->map[0][i])
-		if(map->map[0][i] != 1 || map->map[map->hight - 1][i++] != 1)
-			handl_errors(2);
-	i = 0;
-	while(map->map[i][0])
-		if(map->map[i][0] != 1 || map->map[map->width - 1][i++] != 1)
-			handl_errors(2);
-	
-	
+	i = -1;
+	while(map->map[0][++i])
+		if(map->map[0][i] != '1' || map->map[map->hight - 1][i] != '1')
+			handl_errors(3);
+	i = -1;
+	while(++i < map->hight)
+		if(map->map[i][0] != '1' || map->map[i][map->width - 1] != '1')
+			handl_errors(3);
+	printf("%d\n", i);
 }
 
 void	validation(t_map	*map)
