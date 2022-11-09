@@ -1,7 +1,7 @@
 SRC = color.c error.c validation.c srcs/ft_split.c  srcs/get_next_line.c srcs/get_next_line_utils.c
 INCLUDE		=	so_long.h
 OBG			= 	$(SRC:.c=.o)
-NAME 		=	so_long.a
+NAME 		=	so_long
 GFLAGS 		= 	-Wall -Wextra -Werror
 CC 			=	 gcc
 AR 			=	 ar -rc
@@ -26,7 +26,7 @@ re    : fclean all
 
 test  : re
 	@echo "\033[92m TESTING IN PRORGRESS...✅\033[0m"
-	@$(CC) so_long.c $(NAME)
+	@$(CC) $(GFLAGS) so_long.c $(NAME)
 	# @./a.out "test.bar" || cat -e
 
 1337_logo:

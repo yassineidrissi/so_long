@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 15:49:53 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/07 19:51:04 by yaidriss         ###   ########.fr       */
+/*   Updated: 2022/11/08 18:45:28 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ typedef struct map
 //******** so_long.c **********************//
 int check_char(char buffer);
 int element_validation(t_map *map);
-int validation(t_map* map);
+void validation(t_map* map);
 void fill_map(t_map *map);
 int border_validation(t_map *map);
 //!!*******  src ***********************!/
