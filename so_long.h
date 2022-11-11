@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 15:49:53 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/08 18:45:28 by yaidriss         ###   ########.fr       */
+/*   Updated: 2022/11/11 12:36:33 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,14 @@
 typedef struct map
 {
 	int		count_e;
-	int		count_p;
 	int		count_c;
+	int		count_p;
+	int		first_p;
+	int		second_p;
+	int		f_exit;
 	int		count_moves;
 	char	**map;
+	char	**map2;
 	int		width;
 	int		hight;
 	int		valid;
@@ -58,6 +62,7 @@ typedef struct map
 	char	*enemy;
     int     current_location;
 }t_map;
+
 //******** so_long.c **********************//
 int check_char(char buffer);
 int element_validation(t_map *map);
@@ -66,7 +71,7 @@ void fill_map(t_map *map);
 int border_validation(t_map *map);
 //!!*******  src ***********************!/
 char **ft_split(char const *str,char c);
-
+char	*ft_strdup(const char	*s1);
 ///******* error.c ***********************//
 void	handl_errors(int i);
 //******** print_map ********************//

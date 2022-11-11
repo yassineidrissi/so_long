@@ -1,4 +1,5 @@
-SRC = color.c error.c validation.c srcs/ft_split.c  srcs/get_next_line.c srcs/get_next_line_utils.c
+SRC = color.c error.c validation.c srcs/ft_split.c  srcs/get_next_line.c srcs/get_next_line_utils.c srcs/ft_strdup.c
+
 INCLUDE		=	so_long.h
 OBG			= 	$(SRC:.c=.o)
 NAME 		=	so_long
