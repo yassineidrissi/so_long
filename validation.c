@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 19:06:10 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/11 23:08:21 by yaidriss         ###   ########.fr       */
+/*   Updated: 2022/11/11 23:59:03 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,32 +125,25 @@ void	test_caraters(t_map *map)
 
 void change_neighbor(char **mp,int i,int j)
 {
-	int k;
-	int h;
 
-	k = -1;
-	while(k < 2)
-	{	
-		h = -1;
-		mp[i][j] = 'V';
-		while(h < 2)
-		{
-			if(mp[i + k][j + h] != 'V' && mp[i + k][j + h] != '1')	
-				mp[i + k][j + h] = 'V';
-			h += 2;
-		}
-		k += 2;	
-	}
+	if(mp[i][j - 1] != 'V' && mp[i][j - 1] != '1')	
+				mp[i][j - 1] = 'V';
+	if(mp[i][j + 1] != 'V' && mp[i][j + 1] != '1')	
+				mp[i][j + 1] = 'V';
+	if(mp[i + 1][j] != 'V' && mp[i + 1][j] != '1')	
+				mp[i + 1][j] = 'V';
+	if(mp[i - 1][j] != 'V' && mp[i - 1][j] != '1')	
+				mp[i - 1][j] = 'V';
 }
 
-int find_path_map(char **mp,int hight)
+int find_path_map(char **mp)
 {
 	int	i;
 	int	j;
 
 	i = -1;
 
-	while (++i < hight)
+	while (mp[++i])
 	{
 		j = -1;
 		while (mp[i][++j])
@@ -167,33 +160,33 @@ int	test_valid_map(t_map *map)
 	int i;
 
 	i = -1;
-	// while(++i < map->width && find_path_map(map,map->hight))
-	// {
-	test_down(map);
-	test_up(map);
+	while(++i < map->width && !find_path_map(map->map2))
+	{
+		test_down(map);
+		test_up(map);
+	}
 	return (1);
-	// }
 }
 
-int	test_down(t_map *map)
+void	test_down(t_map *map)
 {
 	int	i;
 	int	j;
 	char **mp = map->map2;
 
 	i = 0;
-	while (++i < map->hight - 1)
+	while (++i < map->hight)
 	{
 		j = - 1;
 		while (mp[i][++j])
-			if (map->map[i][j] == 'V' || mp[i][j] == 'P')
+			if (mp[i][j] == 'V' || mp[i][j] == 'P')
 				change_neighbor(mp, i, j);
 	}
 	// printf("i am here");
-	return(find_path_map(mp,map->hight));
+	// return(find_path_map(mp,map->hight));
 }
 
-int	test_up(t_map *map)
+void	test_up(t_map *map)
 {
 	int	i;
 	int	j;
@@ -202,13 +195,13 @@ int	test_up(t_map *map)
 	i = map->hight - 1;
 	while (--i > 0)
 	{
-		j = map->width;
+		j = map->width - 1;
 		while (mp[i][--j])
 			if (mp[i][j] == 'V' || mp[i][j] == 'P')
 				change_neighbor(mp, i, j);
 	}
 	// printf("i am here");
-	return(find_path_map(mp,map->hight));
+	// return(find_path_map(mp,map->hight));
 }
 
 void	validation(t_map	*map)
@@ -216,7 +209,8 @@ void	validation(t_map	*map)
 	test_rectangular(map);
 	test_walls(map);
 	test_caraters(map);
-	if (!test_valid_map(map))
+	test_valid_map(map);
+	if (!find_path_map(map->map2))
 		handl_errors(8);
 		
 }
