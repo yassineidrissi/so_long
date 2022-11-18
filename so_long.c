@@ -6,11 +6,23 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 15:50:09 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/11 12:05:41 by yaidriss         ###   ########.fr       */
+/*   Updated: 2022/11/18 20:18:13 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void ft_init_xlm(t_map *map)
+{
+    map->mlx = mlx_init();
+    map->window = mlx_new_window(map->mlx,(map->width * 48),(map->hight *48),"hello world");
+    map->img = mlx_xpm_file_to_image(map->mlx,"./img/wall.xpm",&map->img_w, &map->img_h);
+    map->img_floor = mlx_xpm_file_to_image(map->mlx,"./img/free_tile.xpm",&map->img_w, &map->img_h);
+    map->img_door = mlx_xpm_file_to_image(map->mlx,"./img/door.xpm",&map->img_w, &map->img_h);
+    map->img_char = mlx_xpm_file_to_image(map->mlx,"./img/knor.xpm",&map->img_w, &map->img_h);
+    map->img_clc = mlx_xpm_file_to_image(map->mlx,"./img/coin.xpm",&map->img_w, &map->img_h);
+    map->img_eney = mlx_xpm_file_to_image(map->mlx, "./img/enemy.xpm", &map->img_w, &map->img_h);  
+}
 
 int	main(int ac, char **av)
 {
@@ -22,5 +34,10 @@ int	main(int ac, char **av)
 		handl_errors(1);
 	fill_map(&map);
 	validation(&map);
-	
+	// ft_init_xlm(&map);
+	// print_map(&map);
+    // draw(&map);
+ 	// mlx_key_hook(map.window, move_char, &map);
+    // mlx_loop_hook(map.mlx, enemy_move,&map);
+    // mlx_loop(map.mlx);
 }

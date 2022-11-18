@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 15:49:53 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/11 12:36:33 by yaidriss         ###   ########.fr       */
+/*   Updated: 2022/11/18 20:07:09 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>    
-// # include "minilibx/mlx.h"
+# include "minilibx/mlx.h"
 # include "srcs/get_next_line.h"
+
 
 typedef struct map
 {
