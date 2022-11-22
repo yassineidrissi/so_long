@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 15:49:53 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/22 19:55:32 by yaidriss         ###   ########.fr       */
+/*   Created: 2022/11/22 21:25:49 by yaidriss          #+#    #+#             */
+/*   Updated: 2022/11/22 21:27:40 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,13 @@ int element_validation(t_map *map);
 void validation(t_map* map);
 void fill_map(t_map *map);
 int border_validation(t_map *map);
+int	test_valid_map(t_map *map);
+void change_neighbor(char **mp,int i,int j);
 //!!*******  src ***********************!/
-char **ft_split(char const *str,char c);
+char	**ft_split(char const *str,char c);
 char	*ft_strdup(const char	*s1);
+void		test_up(t_map *map);
+void		test_down(t_map *map);
 ///******* error.c ***********************//
 void	handl_errors(int i);
 //******** print_map ********************//

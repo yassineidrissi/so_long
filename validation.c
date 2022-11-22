@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 19:06:10 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/22 19:54:54 by yaidriss         ###   ########.fr       */
+/*   Created: 2022/11/22 21:24:12 by yaidriss          #+#    #+#             */
+/*   Updated: 2022/11/22 21:24:39 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,7 +182,7 @@ void	validation(t_map	*map)
 	test_valid_map(map);
 	// if (!find_path_map(map->map2))
 		// handl_errors(8);
-		
+	
 }
 
 // void	fill_map(t_map *map)
