@@ -1,7 +1,7 @@
 
 SRCS = so_long.c color.c error.c validation.c srcs/ft_split.c \
  srcs/get_next_line.c srcs/get_next_line_utils.c srcs/ft_strdup.c \
- print.c
+ print.c srcs/ft_itoa.c movment1.c
 OBJS			= $(SRCS:.c=.o)
 CC				= gcc
 RM				= rm -rf
@@ -15,13 +15,13 @@ $(MLX)			:
 					make -C minilibx
 
 $(NAME):		$(OBJS) $(MLX)
-				cc $(MLX) -lmlx -framework OpenGL -framework AppKit  $(OBJS) -o $(NAME)
+				@cc $(MLX) -lmlx -framework OpenGL -framework AppKit  $(OBJS) -o $(NAME)
 
-all:			$(NAME)
+all:			$(NAME) 1337_logo
 
 
 clean : 
-	make -C minilibx clean
+	@make -C minilibx clean
 	@$(RM) $(OBJS)
 	@echo "\033[31mDELETE .O FILES🗑\033[0m"
 

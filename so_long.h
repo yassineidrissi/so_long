@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 15:49:53 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/18 20:07:09 by yaidriss         ###   ########.fr       */
+/*   Updated: 2022/11/22 19:55:32 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ int check_surrounding(t_map *m,  int i);
 //int check_box(t_map *m,int current_loc);
 int	check_box( t_map *map,int ppos);
 void find_path(t_map *m);
+void	test_down(t_map *map);
+void	test_up(t_map *map);
 //************* colors **********************//
 void red();
 void reset();

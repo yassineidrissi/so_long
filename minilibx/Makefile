@@ -14,10 +14,10 @@ CFLAGS+= -DSTRINGPUTX11
 all: $(NOM)
 
 $(NOM):	$(OBJ)
-	ar -r $(NOM) $(OBJ)
-	ranlib $(NOM)
-	mkdir library
-	mv $(NOM) library
+	@ar -r $(NOM) $(OBJ)
+	@ranlib $(NOM)
+	@mkdir library
+	@mv $(NOM) library
 
 clean:
 	rm -f $(NOM) $(OBJ) *~
