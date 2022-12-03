@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:25:49 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/22 21:27:40 by yaidriss         ###   ########.fr       */
+/*   Updated: 2022/12/03 16:35:17 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,18 @@
 # include "minilibx/mlx.h"
 # include "srcs/get_next_line.h"
 
+typedef struct l_loc
+{
+	int x;
+	int y;
+}t_loc;
 
 typedef struct map
 {
 	int		count_e;
 	int		count_c;
 	int		count_p;
-	int		first_p;
-	int		second_p;
+	t_loc   *player;
 	int		f_exit;
 	int		count_moves;
 	char	**map;
@@ -58,11 +62,12 @@ typedef struct map
 	char	*exit;
 	char	*collectable;
 	int		coin_valid;
-	char	*player;
+	char	*player1;
 	char	*player_s;
 	char	*enemy;
     int     current_location;
 }t_map;
+
 
 //******** so_long.c **********************//
 int check_char(char buffer);

@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:24:12 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/22 21:24:39 by yaidriss         ###   ########.fr       */
+/*   Updated: 2022/12/03 19:20:27 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,8 @@ void	test_caraters(t_map *map)
 			if (map->map[i][j] == 'P')
 			{
 				map->count_p++;
-				map->first_p = i;
-				map->second_p = j;
+				map->player->x = i;
+				map->player->y = j;
 			}
 			else if (map->map[i][j] == 'C')
 				map->count_c++;
@@ -180,8 +180,8 @@ void	validation(t_map	*map)
 	test_walls(map);
 	test_caraters(map);
 	test_valid_map(map);
-	// if (!find_path_map(map->map2))
-		// handl_errors(8);
+	if (!find_path_map(map->map2))
+		handl_errors(8);
 	
 }
 

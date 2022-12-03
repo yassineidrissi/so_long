@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 15:50:09 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/22 21:32:34 by yaidriss         ###   ########.fr       */
+/*   Updated: 2022/12/03 20:14:52 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ void draw(t_map *m)
     int i;  
 
     i = -1;
-    while(i < m->hight)
+    j = -1;
+    while(m->map[++i][j])
     {
         j = -1;
-        while(j <= m->size)
+        while(m->map[i][++j])
         {   
             if (m->map[i][j] == '1')
                 mlx_put_image_to_window(m->mlx, m->window, m->img, j,i);
@@ -38,6 +39,7 @@ void draw(t_map *m)
         }
     }
     mlx_string_put(m->mlx, m->window, 10, 10, 0xFFFF5615, ft_itoa(m->count_moves));
+    printf("im here \n");
 }
 
 void	ft_init_xlm(t_map *map)
@@ -54,7 +56,7 @@ void	ft_init_xlm(t_map *map)
 
 int	main(int ac, char **av)
 {
-	int i = -1;
+	int i;
 	t_map	map;
 
 	(void)ac;
@@ -63,12 +65,14 @@ int	main(int ac, char **av)
 		handl_errors(1);
 	fill_map(&map);
 	validation(&map);
-	ft_init_xlm(&map);
-	while(map.map2[++i])
+	i = -1;
+    while(map.map2[++i])
 		printf("%s\n",map.map2[i]);
+	ft_init_xlm(&map);
 	// print_map(&map);
     draw(&map);
  	// mlx_key_hook(map.window, move_char, &map);
     // mlx_loop_hook(map.mlx, enemy_move,&map);
-    // mlx_loop(map.mlx);
+    mlx_loop(map.mlx);
+    return (0);
 }

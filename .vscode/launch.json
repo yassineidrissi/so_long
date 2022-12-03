@@ -6,7 +6,9 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/a.out",
-      "args": ["test.ber"],
+      "args": [
+        "test.ber"
+      ],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
       "environment": [],
@@ -20,8 +22,8 @@
       "args": [],
       "stopAtEntry": true,
       "externalConsole": false,
-      "cwd": "/Users/yassine/Desktop/42_project/so_long",
-      "program": "/Users/yassine/Desktop/42_project/so_long/build/Debug/outDebug",
+      "cwd": "/Users/yaidriss/Desktop/so_long",
+      "program": "/Users/yaidriss/Desktop/so_long/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb"
     }

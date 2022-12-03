@@ -1,6 +1,6 @@
 SRCS = so_long.c color.c error.c validation.c srcs/ft_split.c \
  srcs/get_next_line.c srcs/get_next_line_utils.c srcs/ft_strdup.c \
- print.c srcs/ft_itoa.c
+ print.c srcs/ft_itoa.c movment.c
 
 OBJS			= $(SRCS:.c=.o)
 CC				= gcc
