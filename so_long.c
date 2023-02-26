@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yaidriss <yaidriss@student1337.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 15:50:09 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/12/03 20:14:52 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/02/26 04:57:12 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,24 @@ void draw(t_map *m)
     int i;  
 
     i = -1;
-    j = -1;
+    j = 0;
     while(m->map[++i][j])
     {
         j = -1;
         while(m->map[i][++j])
         {   
             if (m->map[i][j] == '1')
-                mlx_put_image_to_window(m->mlx, m->window, m->img, j,i);
+                mlx_put_image_to_window(m->mlx, m->window, m->img, i*48,j*48);
             else if(m->map[i][j] == '0') 
-                mlx_put_image_to_window(m->mlx, m->window, m->img_floor, j,i);
+                mlx_put_image_to_window(m->mlx, m->window, m->img_floor, i*48,j*48);
             else if(m->map[i][j] == 'E') 
-                mlx_put_image_to_window(m->mlx, m->window, m->img_door, j,i);
+                mlx_put_image_to_window(m->mlx, m->window, m->img_door, i*48,j*48);
             else if(m->map[i][j] == 'P') 
-                mlx_put_image_to_window(m->mlx, m->window, m->img_char, j,i);
+                mlx_put_image_to_window(m->mlx, m->window, m->img_char, i*48,j*48);
             else if(m->map[i][j] == 'C') 
-                mlx_put_image_to_window(m->mlx, m->window, m->img_clc, j,i);
+                mlx_put_image_to_window(m->mlx, m->window, m->img_clc, i*48,j*48);
             else if(m->map[i][j] == 'N') 
-                mlx_put_image_to_window(m->mlx, m->window, m->img_eney, j,i);
+                mlx_put_image_to_window(m->mlx, m->window, m->img_eney, i*48,j*48);
         }
     }
     mlx_string_put(m->mlx, m->window, 10, 10, 0xFFFF5615, ft_itoa(m->count_moves));
@@ -71,7 +71,7 @@ int	main(int ac, char **av)
 	ft_init_xlm(&map);
 	// print_map(&map);
     draw(&map);
- 	// mlx_key_hook(map.window, move_char, &map);
+ 	mlx_key_hook(map.window, move_char, &map);
     // mlx_loop_hook(map.mlx, enemy_move,&map);
     mlx_loop(map.mlx);
     return (0);
