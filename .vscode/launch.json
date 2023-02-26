@@ -5,11 +5,11 @@
       "name": "(lldb) Lancer",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/a.out",
+      "program": "${workspaceFolder}/so_long",
       "args": [
         "test.ber"
       ],
-      "stopAtEntry": false,
+      "stopAtEntry": true,
       "cwd": "${fileDirname}",
       "environment": [],
       "externalConsole": false,

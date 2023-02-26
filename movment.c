@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movment.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yaidriss <yaidriss@student1337.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 23:18:17 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/12/03 18:50:38 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/02/26 05:07:09 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void move_up(t_map *m, int i, int j, char self, char enemy)
 {
     
     (void) enemy;
-    if(m->map[i - 1][j] == '0') 
+if(m->map[i - 1][j] == '0') 
     {
         m->map[i][j] = '0';
         m->player = position(i, j - 1);
@@ -103,11 +103,11 @@ int  move_char(int c, t_map *m)
     if(c == 13)
         move_up(m, i, j, 'P', 'N');
     // else if(c == 0)
-        // move_left(m, current_loc, 'P', 'N');
+    //     move_left(m, current_loc, 'P', 'N');
     // else if(c == 1)
-        // move_down(m, current_loc, width, 'P', 'N');
+    //     move_down(m, current_loc, width, 'P', 'N');
     // else if(c == 2)
-        // move_right(m, current_loc, 'P', 'N');
+    //     move_right(m, current_loc, 'P', 'N');
     draw(m);
     print_map(m);
 	return (0);
