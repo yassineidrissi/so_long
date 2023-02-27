@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:25:49 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/12/03 16:35:17 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/02/27 21:22:45 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,8 @@ void Cyan();
 int  	move_char(int c, t_map *m);
 void 	move_up(t_map *m, int current_loc, int width, char self, char enemy);
 void 	move_down(t_map *m, int current_loc, int width, char self, char enemy);
-void 	move_right(t_map *m, int current_loc, char self, char enemy);
-void 	move_left(t_map *m, int current_loc, char self, char enemy);
+void move_right(t_map *m, int i, int j, char self, char enemy);
+void move_left(t_map *m, int i, int j, char self, char enemy);
 void 	draw(t_map *m);
 int 	enemy_move(t_map *map);
 void	ft_putnbr_fd(int n, int fd);

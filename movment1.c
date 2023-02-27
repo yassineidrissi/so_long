@@ -1,4 +1,3 @@
-
 #include "so_long.h"
 	
 int ft_capture(int key,t_map *m)
