@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:24:12 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/02/28 23:55:58 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/01 00:17:41 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,6 +192,7 @@ void validation_args(char *v)
 	if (!s || !s[0] || !s[1] || s[2] || ft_cmp(s[1], "ber"))
 		handl_errors(10);
 }
+// printf("the value of s[1] is %d\n", ft_cmp(s[1], "ber"));
 // void	fill_map(t_map *map)
 // {
 // 	char	*buffer;
