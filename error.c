@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 18:59:46 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/02/28 23:51:12 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/01 00:22:09 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,23 @@ void	handl_errors(int i)
 {
 	red();
 	if (i == 1)
-		printf("map unvalied \n");
+		ft_printf("map unvalied \n");
 	else if (i == 3)
-		printf("\nborder unvalid\n");
+		ft_printf("\nborder unvalid\n");
 	else if (i == 4)
-		printf("\nUpper / Lower boarder is not valid\n");
+		ft_printf("\nUpper / Lower boarder is not valid\n");
 	else if (i == 5)
-		printf("\nside boarder not valid\n");
+		ft_printf("\nside boarder not valid\n");
 	else if (i == 6)
-		printf("\nreading error\n");
+		ft_printf("\nreading error\n");
 	else if (i == 7)
-		printf("\nFailed >> Moved outside map boarder\n");
+		ft_printf("\nFailed >> Moved outside map boarder\n");
 	else if (i == 8)
-		printf("\nFailed >> No Valid Path \n");
+		ft_printf("\nFailed >> No Valid Path \n");
 	else if (i == 9)
-		printf("Failed >> 1 or More of Required Element Missing  \n");
+		ft_printf("Failed >> 1 or More of Required Element Missing  \n");
 	else if (i == 10)
-		printf("Failed >> No Valid Arguements! \n");
+		ft_printf("Failed >> No Valid Arguements! \n");
 	reset();
 	exit(0);
 }

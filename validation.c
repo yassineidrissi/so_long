@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:24:12 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/01 00:17:41 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/01 00:23:42 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,7 +152,7 @@ void	test_down(t_map *map)
 			if (mp[i][j] == 'V' || mp[i][j] == 'P')
 				change_neighbor(mp, i, j);
 	}
-	// printf("i am here");
+	// ft_printf("i am here");
 	// return(find_path_map(mp,map->hight));
 }
 
@@ -170,7 +170,7 @@ void	test_up(t_map *map)
 			if (mp[i][j] == 'V' || mp[i][j] == 'P')
 				change_neighbor(mp, i, j);
 	}
-	// printf("i am here");
+	// ft_printf("i am here");
 	// return(find_path_map(mp,map->hight));
 }
 
@@ -192,7 +192,7 @@ void validation_args(char *v)
 	if (!s || !s[0] || !s[1] || s[2] || ft_cmp(s[1], "ber"))
 		handl_errors(10);
 }
-// printf("the value of s[1] is %d\n", ft_cmp(s[1], "ber"));
+// ft_printf("the value of s[1] is %d\n", ft_cmp(s[1], "ber"));
 // void	fill_map(t_map *map)
 // {
 // 	char	*buffer;
@@ -300,7 +300,7 @@ void validation_args(char *v)
 // // 		mp[i][j - 1] = 'z';
 // // 		map->valid = test_valid_map(map,i,j - 1);
 // // 	}
-// // 	printf("we are in localisation %d,%d\n",i, j);
+// // 	ft_printf("we are in localisation %d,%d\n",i, j);
 // // 	return(map->valid);
 // // }
 
@@ -363,7 +363,7 @@ void validation_args(char *v)
 // 	test_rectangular(map);
 // 	test_walls(map);
 // 	test_caraters(map);
-// 	printf("i am here");
+// 	ft_printf("i am here");
 // 	if (!test_valid_map(map))
 // 		handl_errors(8);
 	

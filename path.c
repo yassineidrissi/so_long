@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   path.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kpanikka <kpanikka@student.42abudhabi.a    +#+  +:+       +#+        */
+/*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 21:40:58 by aelsiddi          #+#    #+#             */
-/*   Updated: 2022/10/21 20:17:04 by kpanikka         ###   ########.fr       */
+/*   Updated: 2023/03/01 00:23:05 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	check_box( t_map *map,int ppos)
 //         if(exit_finder(m,current_loc -1))
 //             return 1;
 //         m->map[current_loc - width ] = 'Z';
-//         printf("Top to %i %c\n", current_loc - width,m->map[current_loc - width]);
+//         ft_printf("Top to %i %c\n", current_loc - width,m->map[current_loc - width]);
 //         current_loc = current_loc - width;
 //         check_box(m,(current_loc));
 //     }
@@ -94,7 +94,7 @@ int	check_box( t_map *map,int ppos)
 //         if(exit_finder(m,current_loc -1))
 //             return 1;
 //         m->map[current_loc - 1 ] = 'Z';
-//         printf("Left to %i %c\n",current_loc - 1,m->map[current_loc - 1]);
+//         ft_printf("Left to %i %c\n",current_loc - 1,m->map[current_loc - 1]);
 //         current_loc = current_loc - 1;
 //         check_box(m,(current_loc ));
 //     }
@@ -105,7 +105,7 @@ int	check_box( t_map *map,int ppos)
 //         if(exit_finder(m,current_loc + width))
 //             return 1;
 //         m->map[current_loc + width ] = 'Z';
-//         printf("Bottom  to %i %c\n", current_loc + width,m->map[current_loc + width]);
+//         ft_printf("Bottom  to %i %c\n", current_loc + width,m->map[current_loc + width]);
 //         current_loc = current_loc + width;
 //         check_box(m,(current_loc ));
 //     }
@@ -116,7 +116,7 @@ int	check_box( t_map *map,int ppos)
 //         if(exit_finder(m,current_loc + 1))
 //             return 1;
 //         m->map[ current_loc + 1 ] = 'Z';
-//         printf("Right to %i %c\n",current_loc + 1,m->map[current_loc + 1]);
+//         ft_printf("Right to %i %c\n",current_loc + 1,m->map[current_loc + 1]);
 //         current_loc = current_loc + 1;
 //         check_box(m,(current_loc ));
 //     }
@@ -137,6 +137,6 @@ void find_path(t_map *m)
         return ;
     print_map(m);
     Green();
-    printf("\nSuccess >>>>>>>>>>>>>>>>> Valid Path Found\n");
+    ft_printf("\nSuccess >>>>>>>>>>>>>>>>> Valid Path Found\n");
     reset();
 }

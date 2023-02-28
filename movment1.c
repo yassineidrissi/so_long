@@ -81,12 +81,12 @@ void death(int loc_p, int loc_e, int loc_en)
 {
     if (loc_p == loc_en)
     {
-        printf("hero died\n");
+        ft_printf("hero died\n");
         exit(0);
     }
     else if(loc_p == loc_e)
     {
-        printf("game finished\n");
+        ft_printf("game finished\n");
         exit(0);
     }
 }

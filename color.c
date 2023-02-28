@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 19:02:10 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/10/30 19:02:12 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/01 00:22:06 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,30 @@
 
 void yellow()
 {
-  printf("\033[1;33m");
+  ft_printf("\033[1;33m");
 }
 
 void red()
 {
-    printf("\033[1;31m");
+    ft_printf("\033[1;31m");
 }
 
 void reset()
 {
-    printf("\033[0m");
+    ft_printf("\033[0m");
 }
 
 void Green()
 {
-    printf("\033[0;32m");
+    ft_printf("\033[0;32m");
 }
 
 void Black()
 {    
-    printf("\033[0;30m");
+    ft_printf("\033[0;30m");
 }
 void Cyan()
 {
-    printf("\033[0;36m");
+    ft_printf("\033[0;36m");
 }
     

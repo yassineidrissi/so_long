@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 23:18:17 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/02/27 21:23:25 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/01 00:22:18 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,7 +182,7 @@ int  move_char(int c, t_map *m)
     
     if(c == 13)
         move_up(m, i, j, 'P', 'N');
-		// printf("im here insade the move_char \n");
+		// ft_printf("im here insade the move_char \n");
     else if(c == 0)
         move_left(m, i, j, 'P', 'N');
     else if(c == 1)
@@ -198,12 +198,12 @@ int  move_char(int c, t_map *m)
 // {
 //     if (loc_p == loc_en)
 //     {
-//         printf("hero died\n");
+//         ft_printf("hero died\n");
 //         exit(0);
 //     }
 //     else if(loc_p == loc_e)
 //     {
-//         printf("game finished\n");
+//         ft_printf("game finished\n");
 //         exit(0);
 //     }
 // }

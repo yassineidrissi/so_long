@@ -4,12 +4,12 @@ void  term(int p_loc, int e_loc, int en_loc)
 {
     if(p_loc == e_loc )
     {
-        printf("\nthe end\n");
+        ft_printf("\nthe end\n");
         exit(0);
     }
     else if ( p_loc == en_loc)
     {
-        printf("\nhero died\n");
+        ft_printf("\nhero died\n");
         exit(0);
     }
 }

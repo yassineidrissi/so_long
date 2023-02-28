@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:24:00 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/02/28 23:59:07 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/01 00:23:21 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void draw(t_map *m)
 
     i = -1;
     j = 0;
-		printf("the width of the map is %d\n",m->width);
-		printf("the height of the map is %d\n",m->hight);
+		ft_printf("the width of the map is %d\n",m->width);
+		ft_printf("the height of the map is %d\n",m->hight);
     while(++i < m->hight) 
     {
         j = -1;
@@ -38,7 +38,7 @@ void draw(t_map *m)
                 mlx_put_image_to_window(m->mlx, m->window, m->img_clc, j*48, i*48);
             else if(m->map[i][j] == 'N') 
                 mlx_put_image_to_window(m->mlx, m->window, m->img_eney, j*48, i*48);
-    				printf("im here and i egale a %d and j = %d\n", i, j);
+    				ft_printf("im here and i egale a %d and j = %d\n", i, j);
         }
     }
     mlx_string_put(m->mlx, m->window, 10, 10, 0xFFFF5615, ft_itoa(m->count_moves));
@@ -71,7 +71,7 @@ int	main(int ac, char **av)
 	validation(&map);
 	i = -1;
     while(map.map2[++i])
-		printf("%s\n",map.map2[i]);
+		ft_printf("%s\n",map.map2[i]);
 	ft_init_xlm(&map);
 	// print_map(&map);
     draw(&map);

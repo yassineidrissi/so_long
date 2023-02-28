@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 20:08:19 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/01/22 20:16:52 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/01 00:23:35 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ int main(int ac, char **av)
 	char storge[500];
 	if(ac != 2)
 	{
-		printf("Error\n");
+		ft_printf("Error\n");
 		return (0);
 	}
 	int fd = open(av[1], O_RDONLY);
-	printf("our fd is : %d\n", fd);
+	ft_printf("our fd is : %d\n", fd);
 	read(fd,storge,500);
-	printf("our storge is :\n%s\n", storge);
+	ft_printf("our storge is :\n%s\n", storge);
 	return (0);
 	
 }
