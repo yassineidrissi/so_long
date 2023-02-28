@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:24:12 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/12/03 19:20:27 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/02/28 23:55:58 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,7 +184,14 @@ void	validation(t_map	*map)
 		handl_errors(8);
 	
 }
+void validation_args(char *v)
+{
+	char **s;
 
+	s = ft_split(v,'.');
+	if (!s || !s[0] || !s[1] || s[2] || ft_cmp(s[1], "ber"))
+		handl_errors(10);
+}
 // void	fill_map(t_map *map)
 // {
 // 	char	*buffer;

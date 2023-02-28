@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 20:23:14 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/09 20:23:36 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/02/28 23:53:54 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,14 @@ char	*ft_strdup(const char	*s1)
 	}
 	ptr[i] = '\0';
 	return (ptr);
+}
+
+int	ft_cmp(const char *s1, const char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] != s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }

@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 18:59:46 by yaidriss          #+#    #+#             */
-/*   Updated: 2022/11/07 19:46:21 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/02/28 23:51:12 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	handl_errors(int i)
 		printf("\nFailed >> No Valid Path \n");
 	else if (i == 9)
 		printf("Failed >> 1 or More of Required Element Missing  \n");
+	else if (i == 10)
+		printf("Failed >> No Valid Arguements! \n");
 	reset();
 	exit(0);
 }

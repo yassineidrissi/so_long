@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:24:00 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/02/27 21:29:34 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/02/28 23:59:07 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,9 @@ int	main(int ac, char **av)
 	int i;
 	t_map	map;
 
-	(void)ac;
+	if (ac != 2)
+		handl_errors(10);
+	validation_args(av[1]);
 	map.fd = open(av[1], O_RDONLY);
 	if (map.fd < 0)
 		handl_errors(1);

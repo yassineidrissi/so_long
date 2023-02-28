@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:25:49 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/02/27 21:22:45 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/02/28 23:55:00 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,13 @@ void fill_map(t_map *map);
 int border_validation(t_map *map);
 int	test_valid_map(t_map *map);
 void change_neighbor(char **mp,int i,int j);
+void validation_args(char *v);
 //!!*******  src ***********************!/
 char	**ft_split(char const *str,char c);
 char	*ft_strdup(const char	*s1);
 void		test_up(t_map *map);
 void		test_down(t_map *map);
+int	ft_cmp(const char *s1, const char *s2);
 ///******* error.c ***********************//
 void	handl_errors(int i);
 //******** print_map ********************//
