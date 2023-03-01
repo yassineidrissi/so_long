@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 23:18:17 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/01 00:22:18 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:58:36 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void move_up(t_map *m, int i, int j, char self, char enemy)
 				m->player->y = j;
         m->map[i - 1][j] = self;
         m->map[i][j] = '0';
-				m->collectable--;
+				m->count_c--;
     }
 		else if(m->map[i - 1][j] == 'C') 
     {
@@ -55,9 +55,9 @@ void move_up(t_map *m, int i, int j, char self, char enemy)
 				m->player->y = j;
         m->map[i - 1][j] = self;
         m->map[i][j] = '0';
-				m->collectable--;
+				m->count_c--;
     }
-    else  if(m->map[i - 1][j] == enemy)
+    else  if(m->map[i - 1][j] ==  'E' && !m->count_c)
         exit(0);
 }
 
@@ -80,9 +80,9 @@ void move_down(t_map *m, int i, int j, char self, char enemy)
 				m->player->y = j;
         m->map[i + 1][j] = self;
         m->map[i][j] = '0';
-				m->collectable--;
+				m->count_c--;
     }
-    else  if(m->map[i + 1][j] == enemy)
+    else  if(m->map[i + 1][j] ==  'E' && !m->count_c)
         exit(0);
 }
 
@@ -98,16 +98,16 @@ void move_right(t_map *m, int i, int j, char self, char enemy)
         m->map[i][j + 1] = self;
         m->map[i][j] = '0';
     }
-    else if(m->map[i + 1][j] == 'C') 
+    else if(m->map[i][j + 1] == 'C') 
     {
 				m->map[i][j] = '0';
         m->player->x = i;
 				m->player->y = j + 1;
         m->map[i][j + 1] = self;
         m->map[i][j] = '0';
-				m->collectable--;
+				m->count_c--;
     }
-    else  if(m->map[i][j - 1] == enemy)
+    else  if(m->map[i][j - 1] ==  'E' && !m->count_c)
         exit(0);
 }
 
@@ -130,9 +130,9 @@ void move_left(t_map *m, int i, int j, char self, char enemy)
 				m->player->y = j - 1;
         m->map[i][j - 1] = self;
         m->map[i][j] = '0';
-				m->collectable--;
+				m->count_c--;
     }
-    else  if(m->map[i][j - 1] == enemy)
+    else  if(m->map[i][j - 1] == 'E' && !m->count_c)
         exit(0);
 }
 
