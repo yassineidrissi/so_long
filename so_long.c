@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:24:00 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/01 20:55:26 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/01 22:17:28 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ void draw(t_map *m)
                 mlx_put_image_to_window(m->mlx, m->window, m->img, j*48, i*48);
             else if(m->map[i][j] == '0') 
                 mlx_put_image_to_window(m->mlx, m->window, m->img_floor, j*48, i*48);
-            else if(m->map[i][j] == 'E') 
+            else if(m->map[i][j] == 'E' && !m->count_c) 
                 mlx_put_image_to_window(m->mlx, m->window, m->img_door, j*48, i*48);
+						else if(m->map[i][j] == 'E' && m->count_c) 
+                mlx_put_image_to_window(m->mlx, m->window, m->img_floor, j*48, i*48);
             else if(m->map[i][j] == 'P') 
                 mlx_put_image_to_window(m->mlx, m->window, m->img_char, j*48, i*48);
             else if(m->map[i][j] == 'C') 
