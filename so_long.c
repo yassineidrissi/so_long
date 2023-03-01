@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:24:00 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/01 00:23:21 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:20:38 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void draw(t_map *m)
     				ft_printf("im here and i egale a %d and j = %d\n", i, j);
         }
     }
-    mlx_string_put(m->mlx, m->window, 10, 10, 0xFFFF5615, ft_itoa(m->count_moves));
+    mlx_string_put(m->mlx, m->window, 10, 10, 0xFFFF5615, ft_itoa(m->count_moves++));
 }
 
 void	ft_init_xlm(t_map *map)
@@ -54,6 +54,12 @@ void	ft_init_xlm(t_map *map)
     map->img_char = mlx_xpm_file_to_image(map->mlx, "./img/player.xpm",&map->img_w, &map->img_h);
     map->img_clc = mlx_xpm_file_to_image(map->mlx,  "./img/coin.xpm",&map->img_w, &map->img_h);
     map->img_eney = mlx_xpm_file_to_image(map->mlx, "./img/enemy.xpm", &map->img_w, &map->img_h);  
+}
+
+int ft_close(void *map)
+{
+	(void)map;
+	exit(0);
 }
 
 int	main(int ac, char **av)
@@ -76,7 +82,7 @@ int	main(int ac, char **av)
 	// print_map(&map);
     draw(&map);
  	mlx_key_hook(map.window, move_char, &map);
-    // mlx_loop_hook(map.mlx, enemy_move,&map);
-    mlx_loop(map.mlx);
+  mlx_hook(map.window ,17,0, ft_close,0);
+  mlx_loop(map.mlx);
     return (0);
 }
