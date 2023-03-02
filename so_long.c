@@ -6,44 +6,42 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:24:00 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/01 22:17:28 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/02 20:27:45 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void draw(t_map *m)
+void	draw(t_map *m)
 {
-    int j;
-    int i;
+	int	j;
+	int	i;
 
-    i = -1;
-    j = 0;
-		// ft_printf("the width of the map is %d\n",m->width);
-		// ft_printf("the height of the map is %d\n",m->hight);
-    while(++i < m->hight) 
-    {
-        j = -1;
-        while(++j < m->width)
-        {   
-            if (m->map[i][j] == '1')
-                mlx_put_image_to_window(m->mlx, m->window, m->img, j*48, i*48);
-            else if(m->map[i][j] == '0') 
-                mlx_put_image_to_window(m->mlx, m->window, m->img_floor, j*48, i*48);
-            else if(m->map[i][j] == 'E' && !m->count_c) 
-                mlx_put_image_to_window(m->mlx, m->window, m->img_door, j*48, i*48);
-						else if(m->map[i][j] == 'E' && m->count_c) 
-                mlx_put_image_to_window(m->mlx, m->window, m->img_floor, j*48, i*48);
-            else if(m->map[i][j] == 'P') 
-                mlx_put_image_to_window(m->mlx, m->window, m->img_char, j*48, i*48);
-            else if(m->map[i][j] == 'C') 
-                mlx_put_image_to_window(m->mlx, m->window, m->img_clc, j*48, i*48);
-            else if(m->map[i][j] == 'N') 
-                mlx_put_image_to_window(m->mlx, m->window, m->img_eney, j*48, i*48);
-    				// ft_printf("im here and i egale a %d and j = %d\n", i, j);
-        }
-    }
-    mlx_string_put(m->mlx, m->window, 10, 10, 0xFFFF5615, ft_itoa(m->count_c));
+	i = -1;
+	j = 0;
+	while (++i < m->hight)
+	{
+		j = -1;
+		while (++j < m->width)
+		{
+			if (m->map[i][j] == '1')
+				mlx_put_image_to_window(m->mlx, m->window, m->img, \
+			j * 48, i * 48);
+			else if (m->map[i][j] == '0')
+				mlx_put_image_to_window(m->mlx, m->window, m->img_floor, j * 48, i * 48);
+			else if (m->map[i][j] == 'E' && !m->count_c) 
+					mlx_put_image_to_window(m->mlx, m->window, m->img_door, j*48, i*48);
+			else if(m->map[i][j] == 'E' && m->count_c) 
+					mlx_put_image_to_window(m->mlx, m->window, m->img_floor, j*48, i*48);
+			else if(m->map[i][j] == 'P') 
+					mlx_put_image_to_window(m->mlx, m->window, m->img_char, j*48, i*48);
+			else if(m->map[i][j] == 'C') 
+					mlx_put_image_to_window(m->mlx, m->window, m->img_clc, j*48, i*48);
+			else if(m->map[i][j] == 'N') 
+					mlx_put_image_to_window(m->mlx, m->window, m->img_eney, j*48, i*48);
+		}
+	}
+	mlx_string_put(m->mlx, m->window, 10, 10, 0xFFFF5615, ft_itoa(m->count_c));
 }
 
 void	ft_init_xlm(t_map *map)
@@ -62,6 +60,7 @@ int ft_close(void *map)
 {
 	(void)map;
 	exit(0);
+	//!need to change to change exit to while(1);
 }
 
 int	main(int ac, char **av)
@@ -83,8 +82,10 @@ int	main(int ac, char **av)
 	ft_init_xlm(&map);
 	// print_map(&map);
     draw(&map);
+	//! mlx_loop_hook(&map) this function is for the bonus animation but need to check in the documentation.
  	mlx_key_hook(map.window, move_char, &map);
   mlx_hook(map.window ,17,0, ft_close,0);
   mlx_loop(map.mlx);
     return (0);
 }
+//! give me the name of the script to handl the norminette : C_formater_4
