@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:24:12 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/01 00:23:42 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/03 23:46:14 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,11 @@ void	test_caraters(t_map *map)
 			else if (map->map[i][j] == 'C')
 				map->count_c++;
 			else if (map->map[i][j] == 'E')
+			{
 				map->count_e++;
+				map->exit.x = i;
+				map->exit.y = j;
+			}	
 		}
 	}
 	if (map->count_p != 1 || map->count_e != 1 || map->count_c < 1)
@@ -187,10 +191,17 @@ void	validation(t_map	*map)
 void validation_args(char *v)
 {
 	char **s;
+	int i;
 
+	i = 0;
 	s = ft_split(v,'.');
 	if (!s || !s[0] || !s[1] || s[2] || ft_cmp(s[1], "ber"))
+	{
+		ft_free_str(s++);
+		ft_free_str(s++);
 		handl_errors(10);
+	}
+	ft_free_str(s);
 }
 // ft_printf("the value of s[1] is %d\n", ft_cmp(s[1], "ber"));
 // void	fill_map(t_map *map)

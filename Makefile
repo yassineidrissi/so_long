@@ -36,7 +36,7 @@ SRCS = so_long.c color.c error.c validation.c srcs/ft_split.c \
 
 
 OBJS			= $(SRCS:.c=.o)
-CC				= gcc
+CC				= cc
 RM				= rm -f
 CFLAGS			= -g -Wall -Wextra -Werror -I.
 
@@ -44,20 +44,23 @@ NAME			= so_long
 
 MLX				= minilibx/library/libmlx.a
 
-all:			$(NAME)
+# %.o : %.c :
+# 		$(CC) $(CFLAGS) -c $< -o $^
+
+all:		1337_logo	$(NAME) 
 
 $(MLX)			: 
-					make -C minilibx
+					@make -C minilibx
 
 $(NAME):		$(OBJS) $(MLX)
-				cc $(MLX) -framework OpenGL -framework AppKit  $(OBJS) -o $(NAME)
+				@cc $(MLX) -framework OpenGL -framework AppKit  $(OBJS) -o $(NAME)
 
 clean:
-				$(RM) $(OBJS) 
-				make -C minilibx clean
+				@$(RM) $(OBJS) 
+				@make -C minilibx clean
 
 fclean:			clean
-				$(RM) $(NAME)
+				@$(RM) $(NAME)
 
 re:				fclean $(NAME)
 
@@ -69,7 +72,7 @@ re:				fclean $(NAME)
 	@echo "\033[92m╚═╝██║░░░╚═══██╗░╚═══██╗░░░██╔╝░\033[0m██║╚██╔╝██║██╔══╝░░██║░░██║"
 	@echo "\033[92m███████╗██████╔╝██████╔╝░░██╔╝░░\033[0m██║░╚═╝░██║███████╗██████╔╝"
 	@echo "\033[92m╚══════╝╚═════╝░╚═════╝░░░╚═╝░░░\033[0m╚═╝░░░░░╚═╝╚══════╝╚═════╝░"
-	@echo "\033[92mCREATING .O FILES AND LIBFTPRINTF.A✅\033[0m"
+	@echo "\033[92mCREATING .O FILES AND SO_LONG✅\033[0m"
 
 .PHONY: all fclean clean test 1337_logo
 

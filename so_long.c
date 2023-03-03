@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:24:00 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/02 20:27:45 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/03 23:21:09 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	ft_init_xlm(t_map *map)
 int ft_close(void *map)
 {
 	(void)map;
+	// while(1);
 	exit(0);
 	//!need to change to change exit to while(1);
 }

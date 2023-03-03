@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:25:49 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/01 00:22:43 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/03 23:45:53 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ typedef struct map
 	int		endian;
 	char	*wall;
 	char	*ground;
-	char	*exit;
+	t_loc		exit;
 	char	*collectable;
 	int		coin_valid;
 	char	*player1;
