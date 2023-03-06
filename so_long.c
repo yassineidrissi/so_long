@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:24:00 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/06 21:11:02 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/06 22:31:04 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,9 @@ void	draw(t_map *m)
 				mlx_put_image_to_window(m->mlx, m->window, m->img_floor, j * 48, i * 48);
 			else if(m->map[i][j] == 'C') 
 					mlx_put_image_to_window(m->mlx, m->window, m->img_clc, j*48, i*48);
-			else if(m->map[i][j] == 'N') 
-					mlx_put_image_to_window(m->mlx, m->window, m->img_eney, j*48, i*48);
 		}
 	}
-	i = -1;
-    while(m->map[++i])
-		ft_printf("%s\n",m->map[i]);
-	mlx_string_put(m->mlx, m->window, 10, 10, 0xFFFF5615, ft_itoa(m->count_c));
+	// mlx_string_put(m->mlx, m->window, 10, 10, 0xFFFF5615, ft_itoa(m->count_c));
 }
 
 void	ft_init_xlm(t_map *map)
@@ -81,9 +76,11 @@ int	main(int ac, char **av)
 		handl_errors(1);
 	fill_map(&map);
 	validation(&map);
+	while(1)
+		;
 	i = -1;
-    while(map.map2[++i])
-		ft_printf("%s\n",map.map2[i]);
+    // while(map.map2[++i])
+		// ft_printf("%s\n",map.map2[i]);
 	ft_init_xlm(&map);
 	// print_map(&map);
     draw(&map);

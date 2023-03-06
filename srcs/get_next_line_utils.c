@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 20:52:25 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/06 21:52:08 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/06 22:17:51 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,8 @@ int	ft_strlen(char *str)
 
 void	ft_free_str(char **p)
 {
-	if (p && *p)
-	{
-		free(*p);
-		*p = NULL;
-	}
+	while (*p)
+		free(*p++);
 }
 
 int	ft_strchr(char *str)
