@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yaidriss <yaidriss@student1337.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:24:00 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/06 22:31:04 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/06 22:44:17 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int ft_close(void *map)
 
 int	main(int ac, char **av)
 {
-	int i;
+	// int i;
 	t_map	map;
 
 	if (ac != 2)
@@ -78,7 +78,7 @@ int	main(int ac, char **av)
 	validation(&map);
 	while(1)
 		;
-	i = -1;
+	// i = -1;
     // while(map.map2[++i])
 		// ft_printf("%s\n",map.map2[i]);
 	ft_init_xlm(&map);

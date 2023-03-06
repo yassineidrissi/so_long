@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yaidriss <yaidriss@student1337.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:25:49 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/03 23:45:53 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/06 22:42:44 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void		test_up(t_map *map);
 void		test_down(t_map *map);
 int	ft_cmp(const char *s1, const char *s2);
 int	ft_printf(const char *format, ...);
+void ft_free_double(char **p);
 ///******* error.c ***********************//
 void	handl_errors(int i);
 //******** print_map ********************//

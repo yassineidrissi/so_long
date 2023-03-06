@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yaidriss <yaidriss@student1337.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 20:52:25 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/06 22:17:51 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/06 22:42:24 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ int	ft_strlen(char *str)
 
 void	ft_free_str(char **p)
 {
-	while (*p)
-		free(*p++);
+	if (p && *p)
+	{
+		free(*p);
+		*p = 0;
+	}
 }
 
 int	ft_strchr(char *str)

@@ -17,15 +17,11 @@
     },
     {
       "name": "C/C++ Runner: Debug Session",
-      "type": "cppdbg",
+      "type": "lldb",
       "request": "launch",
       "args": [],
-      "stopAtEntry": true,
-      "externalConsole": false,
-      "cwd": "/Users/yaidriss/Desktop/so_long",
-      "program": "/Users/yaidriss/Desktop/so_long/build/Debug/outDebug",
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb"
+      "cwd": "/Users/yassine/Desktop/42_project/so_long_v1",
+      "program": "/Users/yassine/Desktop/42_project/so_long_v1/build/Debug/outDebug"
     }
   ]
 }
