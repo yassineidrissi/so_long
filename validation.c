@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:24:12 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/03 23:46:14 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/06 21:51:16 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,7 +201,8 @@ void validation_args(char *v)
 		ft_free_str(s++);
 		handl_errors(10);
 	}
-	ft_free_str(s);
+	ft_free_str(s++);
+	ft_free_str(s++);
 }
 // ft_printf("the value of s[1] is %d\n", ft_cmp(s[1], "ber"));
 // void	fill_map(t_map *map)
