@@ -1,6 +1,51 @@
-SRCS = so_long.c color.c error.c validation.c srcs/ft_split.c \
+SRCS = so_long.c error.c validation/validation.c \
+validation/validation3.c validation/validation2.c  srcs/ft_split.c \
  srcs/get_next_line.c srcs/get_next_line_utils.c srcs/ft_strdup.c \
  print.c srcs/ft_itoa.c movment.c srcs/ft_printf.c
+
+
+
+OBJS			= $(SRCS:.c=.o)
+CC				= cc
+RM				= rm -f
+CFLAGS			= -g -Wall -Wextra -Werror -I.
+
+NAME			= so_long
+
+MLX				= minilibx/library/libmlx.a
+
+# %.o : %.c :
+# 		$(CC) $(CFLAGS) -c $< -o $^
+
+all:		1337_logo	$(NAME) 
+
+$(MLX)			: 
+					@make -C minilibx
+
+$(NAME):	1337_logo	$(OBJS) $(MLX)
+				@cc $(MLX) -framework OpenGL -framework AppKit  $(OBJS) -o $(NAME)
+
+clean:
+				@$(RM) $(OBJS) 
+				@make -C minilibx clean
+
+fclean:			clean
+				@$(RM) $(NAME)
+
+re:				fclean $(NAME)
+
+1337_logo:
+
+	@echo "\033[92m░░███╗░░██████╗░██████╗░███████╗\033[0m███╗░░░███╗███████╗██████╗░"
+	@echo "\033[92m░████║░░╚════██╗╚════██╗╚════██║\033[0m████╗░████║██╔════╝██╔══██╗"
+	@echo "\033[92m██╔██║░░░█████╔╝░█████╔╝░░░░██╔╝\033[0m██╔████╔██║█████╗░░██║░░██║"
+	@echo "\033[92m╚═╝██║░░░╚═══██╗░╚═══██╗░░░██╔╝░\033[0m██║╚██╔╝██║██╔══╝░░██║░░██║"
+	@echo "\033[92m███████╗██████╔╝██████╔╝░░██╔╝░░\033[0m██║░╚═╝░██║███████╗██████╔╝"
+	@echo "\033[92m╚══════╝╚═════╝░╚═════╝░░░╚═╝░░░\033[0m╚═╝░░░░░╚═╝╚══════╝╚═════╝░"
+	@echo "\033[92mCREATING .O FILES AND SO_LONG✅\033[0m"
+
+.PHONY: all fclean clean test 1337_logo
+
 
 # OBJS			= $(SRCS:.c=.o)
 # CC				= gcc
@@ -33,46 +78,3 @@ SRCS = so_long.c color.c error.c validation.c srcs/ft_split.c \
 # re:				fclean $(NAME)
 
 # .PHONY:			all clean fclean re
-
-
-OBJS			= $(SRCS:.c=.o)
-CC				= cc
-RM				= rm -f
-CFLAGS			= -g -Wall -Wextra -Werror -I.
-
-NAME			= so_long
-
-MLX				= minilibx/library/libmlx.a
-
-# %.o : %.c :
-# 		$(CC) $(CFLAGS) -c $< -o $^
-
-all:		1337_logo	$(NAME) 
-
-$(MLX)			: 
-					@make -C minilibx
-
-$(NAME):		$(OBJS) $(MLX)
-				@cc $(MLX) -framework OpenGL -framework AppKit  $(OBJS) -o $(NAME)
-
-clean:
-				@$(RM) $(OBJS) 
-				@make -C minilibx clean
-
-fclean:			clean
-				@$(RM) $(NAME)
-
-re:				fclean $(NAME)
-
-1337_logo:
-
-	@echo "\033[92m░░███╗░░██████╗░██████╗░███████╗\033[0m███╗░░░███╗███████╗██████╗░"
-	@echo "\033[92m░████║░░╚════██╗╚════██╗╚════██║\033[0m████╗░████║██╔════╝██╔══██╗"
-	@echo "\033[92m██╔██║░░░█████╔╝░█████╔╝░░░░██╔╝\033[0m██╔████╔██║█████╗░░██║░░██║"
-	@echo "\033[92m╚═╝██║░░░╚═══██╗░╚═══██╗░░░██╔╝░\033[0m██║╚██╔╝██║██╔══╝░░██║░░██║"
-	@echo "\033[92m███████╗██████╔╝██████╔╝░░██╔╝░░\033[0m██║░╚═╝░██║███████╗██████╔╝"
-	@echo "\033[92m╚══════╝╚═════╝░╚═════╝░░░╚═╝░░░\033[0m╚═╝░░░░░╚═╝╚══════╝╚═════╝░"
-	@echo "\033[92mCREATING .O FILES AND SO_LONG✅\033[0m"
-
-.PHONY: all fclean clean test 1337_logo
-

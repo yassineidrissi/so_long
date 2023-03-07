@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 18:59:46 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/01 00:22:09 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/07 21:18:53 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	handl_errors(int i)
 {
-	red();
+	ft_printf("\033[1;31m");
 	if (i == 1)
 		ft_printf("map unvalied \n");
 	else if (i == 3)
@@ -33,6 +33,6 @@ void	handl_errors(int i)
 		ft_printf("Failed >> 1 or More of Required Element Missing  \n");
 	else if (i == 10)
 		ft_printf("Failed >> No Valid Arguements! \n");
-	reset();
+	ft_printf("\033[0m");
 	exit(0);
 }

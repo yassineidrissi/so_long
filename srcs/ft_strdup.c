@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaidriss <yaidriss@student1337.com>        +#+  +:+       +#+        */
+/*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 20:23:14 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/06 22:42:36 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/07 21:17:54 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_cmp(const char *s1, const char *s2)
 	return (s1[i] - s2[i]);
 }
 
-void ft_free_double(char **p)
+void	ft_free_double(char **p)
 {
 	while (*p)
 		free(*p++);

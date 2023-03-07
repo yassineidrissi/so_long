@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaidriss <yaidriss@student1337.com>        +#+  +:+       +#+        */
+/*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:24:00 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/06 22:44:17 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/07 21:00:46 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	draw(t_map *m)
 			if (m->map[i][j] == '1')
 				mlx_put_image_to_window(m->mlx, m->window, m->img, \
 			j * 48, i * 48);
-			else if(m->map[i][j] == 'P') 
+			else if (m->map[i][j] == 'P')
 					mlx_put_image_to_window(m->mlx, m->window, m->img_char, j*48, i*48);
 			else if (m->exit.x == i && m->exit.y == j && !m->count_c) 
 					mlx_put_image_to_window(m->mlx, m->window, m->img_door, j*48, i*48);
@@ -39,7 +39,6 @@ void	draw(t_map *m)
 					mlx_put_image_to_window(m->mlx, m->window, m->img_clc, j*48, i*48);
 		}
 	}
-	// mlx_string_put(m->mlx, m->window, 10, 10, 0xFFFF5615, ft_itoa(m->count_c));
 }
 
 void	ft_init_xlm(t_map *map)

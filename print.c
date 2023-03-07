@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 10:54:17 by aelsiddi          #+#    #+#             */
-/*   Updated: 2023/03/01 00:24:57 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/07 21:16:39 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void print_map(t_map *m)
         if(m->width * j == i) // loop untill it reach the last char on the line 
         {
             ft_printf("\n");  // start new line 
-            //color(m->map[i]);
             ft_printf("%s",m->map[i]); // start printing 
             j++;
         }

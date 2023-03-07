@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaidriss <yaidriss@student1337.com>        +#+  +:+       +#+        */
+/*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:25:49 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/06 22:42:44 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/07 21:14:09 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,10 @@ int border_validation(t_map *map);
 int	test_valid_map(t_map *map);
 void change_neighbor(char **mp,int i,int j);
 void validation_args(char *v);
+void	test_rectangular(t_map *map);
+void	test_walls(t_map *map);
+void	test_caraters(t_map *map);
+
 //!!*******  src ***********************!/
 char	**ft_split(char const *str,char c);
 char	*ft_strdup(const char	*s1);
@@ -92,13 +96,14 @@ void	handl_errors(int i);
 //******** print_map ********************//
 void print_map(t_map *map);
 //********* Path*************************//
-int locate_p(t_map *m);
+
+t_loc	ft_location(t_map *m, char c);
 int exit_finder(t_map *m,int i);
 int check_surrounding(t_map *m,  int i);
 //int check_box(t_map *m,int current_loc);
 int	check_box( t_map *map,int ppos);
-void find_path(t_map *m);
 void	test_down(t_map *map);
+int	find_path_map(char **mp);
 void	test_up(t_map *map);
 //************* colors **********************//
 void red();
