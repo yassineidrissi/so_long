@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:25:49 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/07 21:14:09 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:12:34 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct map
 	int		count_e;
 	int		count_c;
 	int		count_p;
-	t_loc   *player;
+	t_loc   player;
 	int		f_exit;
 	int		count_moves;
 	char	**map;

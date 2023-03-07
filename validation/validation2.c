@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 20:38:50 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/07 22:00:56 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:12:20 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	validation(t_map	*map)
 	if (!find_path_map(map->map2))
 		handl_errors(8);
 	ft_free_double(map->map2);
+	map->player = ft_location(map, 'P');
+	map->exit = ft_location(map, 'E');
 }
 
 void	validation_args(char *v)
