@@ -6,15 +6,15 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 23:18:17 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/07 20:44:10 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:07:34 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-	
-t_loc *position(int i, int j)
+
+t_loc	*position(int i, int j)
 {
-    t_loc *pos = NULL;
+		t_loc *pos = NULL;
 
     pos->x = i;
     pos->y = j;

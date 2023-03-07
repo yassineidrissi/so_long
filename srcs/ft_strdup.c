@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 20:23:14 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/07 21:17:54 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/07 21:59:33 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ int	ft_cmp(const char *s1, const char *s2)
 
 void	ft_free_double(char **p)
 {
-	while (*p)
-		free(*p++);
+	int	i;
+
+	i = 0;
+	while (p[i])
+		free(p[i++]);
+	free(p);
 }

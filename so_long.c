@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:24:00 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/07 21:00:46 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:01:53 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,12 @@ void	ft_init_xlm(t_map *map)
     map->img_eney = mlx_xpm_file_to_image(map->mlx, "./img/enemy.xpm", &map->img_w, &map->img_h);  
 }
 
-int ft_close(void *map)
+int ft_close(t_map *map)
 {
-	(void)map;
+	(void) map;
+	ft_free_double(map->map);
 	while(1)
 		;
-	// exit(0);
 	//!need to change to change exit to while(1);
 }
 
@@ -75,8 +75,6 @@ int	main(int ac, char **av)
 		handl_errors(1);
 	fill_map(&map);
 	validation(&map);
-	while(1)
-		;
 	// i = -1;
     // while(map.map2[++i])
 		// ft_printf("%s\n",map.map2[i]);
@@ -85,7 +83,7 @@ int	main(int ac, char **av)
     draw(&map);
 	//! mlx_loop_hook(&map) this function is for the bonus animation but need to check in the documentation.
  	mlx_key_hook(map.window, move_char, &map);
-  mlx_hook(map.window ,17,0, ft_close,0);
+  mlx_hook(map.window ,17,0, ft_close, &map);
   mlx_loop(map.mlx);
     return (0);
 }
