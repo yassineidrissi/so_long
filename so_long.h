@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:25:49 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/08 20:50:50 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/08 21:48:25 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int		check_box( t_map *map, int ppos);
 void	test_down(t_map *map);
 int		find_path_map(char **mp);
 void	test_up(t_map *map);
-
+int		ft_close(t_map *map);
 //************* movment ***********************//
 int		move_char(int c, t_map *m);
 void	move_up(t_map *m, int current_loc, int width, char self);

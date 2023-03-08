@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:24:12 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/07 21:01:20 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/08 21:51:16 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	fill_map(t_map *map)
 	}
 	buffer2 = ft_strdup(buffer);
 	map->map = ft_split(buffer, '\n');
+	if (!map->map[0])
+		handl_errors(3);
 	map->map2 = ft_split(buffer2, '\n');
 	free(buffer);
 	free(buffer2);

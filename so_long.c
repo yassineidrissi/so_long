@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:24:00 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/07 22:30:02 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/08 21:44:38 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,14 @@ void	ft_init_xlm(t_map *map)
 	&map->img_w, &map->img_h);
 	map->img_eney = mlx_xpm_file_to_image(map->mlx, "./img/enemy.xpm", \
 	&map->img_w, &map->img_h);
+	//! need to add condition for protection!
+	//! add esc to exit 
 }
 
 int	ft_close(t_map *map)
 {
 	ft_free_double(map->map);
+	close(map->fd);
 	exit(1);
 }
 
