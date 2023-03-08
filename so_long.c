@@ -6,11 +6,33 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:24:00 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/07 22:01:53 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:30:02 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	put_pix(t_map *m, int i, int j)
+{
+	if (m->map[i][j] == '1')
+		mlx_put_image_to_window(m->mlx, m->window, m->img, \
+	j * 48, i * 48);
+	else if (m->map[i][j] == 'P')
+		mlx_put_image_to_window(m->mlx, m->window, \
+	m->img_char, j * 48, i * 48);
+	else if (m->exit.x == i && m->exit.y == j && !m->count_c)
+		mlx_put_image_to_window(m->mlx, m->window, \
+			m->img_door, j * 48, i * 48);
+	else if (m->exit.x == i && m->exit.y == j && m->count_c)
+		mlx_put_image_to_window(m->mlx, m->window, \
+		m->img_floor, j * 48, i * 48);
+	else if (m->map[i][j] == '0')
+		mlx_put_image_to_window(m->mlx, m->window, \
+		m->img_floor, j * 48, i * 48);
+	else if (m->map[i][j] == 'C')
+		mlx_put_image_to_window(m->mlx, m->window, \
+		m->img_clc, j * 48, i * 48);
+}
 
 void	draw(t_map *m)
 {
@@ -24,47 +46,38 @@ void	draw(t_map *m)
 		j = -1;
 		while (++j < m->width)
 		{
-			if (m->map[i][j] == '1')
-				mlx_put_image_to_window(m->mlx, m->window, m->img, \
-			j * 48, i * 48);
-			else if (m->map[i][j] == 'P')
-					mlx_put_image_to_window(m->mlx, m->window, m->img_char, j*48, i*48);
-			else if (m->exit.x == i && m->exit.y == j && !m->count_c) 
-					mlx_put_image_to_window(m->mlx, m->window, m->img_door, j*48, i*48);
-			else if(m->exit.x == i && m->exit.y == j && m->count_c) 
-					mlx_put_image_to_window(m->mlx, m->window, m->img_floor, j*48, i*48);
-			else if (m->map[i][j] == '0')
-				mlx_put_image_to_window(m->mlx, m->window, m->img_floor, j * 48, i * 48);
-			else if(m->map[i][j] == 'C') 
-					mlx_put_image_to_window(m->mlx, m->window, m->img_clc, j*48, i*48);
+			put_pix(m, i, j);
 		}
 	}
 }
 
 void	ft_init_xlm(t_map *map)
 {
-    map->mlx = mlx_init();
-    map->window = mlx_new_window(map->mlx,(map->width * 48),(map->hight * 48),"hello world");
-    map->img = mlx_xpm_file_to_image(map->mlx,"./img/wall.xpm",&map->img_w, &map->img_h);
-    map->img_floor = mlx_xpm_file_to_image(map->mlx,"./img/free_tile.xpm",&map->img_w, &map->img_h);
-    map->img_door = mlx_xpm_file_to_image(map->mlx, "./img/door.xpm",&map->img_w, &map->img_h);
-    map->img_char = mlx_xpm_file_to_image(map->mlx, "./img/player.xpm",&map->img_w, &map->img_h);
-    map->img_clc = mlx_xpm_file_to_image(map->mlx,  "./img/coin.xpm",&map->img_w, &map->img_h);
-    map->img_eney = mlx_xpm_file_to_image(map->mlx, "./img/enemy.xpm", &map->img_w, &map->img_h);  
+	map->mlx = mlx_init();
+	map->window = mlx_new_window(map->mlx, (map->width * 48), \
+	(map->hight * 48), "hello world");
+	map->img = mlx_xpm_file_to_image(map->mlx, "./img/wall.xpm", \
+	&map->img_w, &map->img_h);
+	map->img_floor = mlx_xpm_file_to_image(map->mlx, "./img/free_tile.xpm", \
+	&map->img_w, &map->img_h);
+	map->img_door = mlx_xpm_file_to_image(map->mlx, "./img/door.xpm", \
+	&map->img_w, &map->img_h);
+	map->img_char = mlx_xpm_file_to_image(map->mlx, "./img/player.xpm", \
+	&map->img_w, &map->img_h);
+	map->img_clc = mlx_xpm_file_to_image(map->mlx, "./img/coin.xpm", \
+	&map->img_w, &map->img_h);
+	map->img_eney = mlx_xpm_file_to_image(map->mlx, "./img/enemy.xpm", \
+	&map->img_w, &map->img_h);
 }
 
-int ft_close(t_map *map)
+int	ft_close(t_map *map)
 {
-	(void) map;
 	ft_free_double(map->map);
-	while(1)
-		;
-	//!need to change to change exit to while(1);
+	exit(1);
 }
 
 int	main(int ac, char **av)
 {
-	// int i;
 	t_map	map;
 
 	if (ac != 2)
@@ -75,16 +88,12 @@ int	main(int ac, char **av)
 		handl_errors(1);
 	fill_map(&map);
 	validation(&map);
-	// i = -1;
-    // while(map.map2[++i])
-		// ft_printf("%s\n",map.map2[i]);
 	ft_init_xlm(&map);
-	// print_map(&map);
-    draw(&map);
-	//! mlx_loop_hook(&map) this function is for the bonus animation but need to check in the documentation.
- 	mlx_key_hook(map.window, move_char, &map);
-  mlx_hook(map.window ,17,0, ft_close, &map);
-  mlx_loop(map.mlx);
-    return (0);
+	draw(&map);
+	mlx_key_hook(map.window, move_char, &map);
+	mlx_hook(map.window, 17, 0, ft_close, &map);
+	mlx_loop(map.mlx);
+	return (0);
 }
+
 //! give me the name of the script to handl the norminette : C_formater_4

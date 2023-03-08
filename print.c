@@ -6,33 +6,11 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 10:54:17 by aelsiddi          #+#    #+#             */
-/*   Updated: 2023/03/07 21:16:39 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/08 20:29:07 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void print_map(t_map *m)
-{
-    int j;
-    int i;
-
-    i = 0; // width counter 
-    j = 1; // hight counter 
-    
-    while(i < m->size)
-    {
-        if(m->width * j == i) // loop untill it reach the last char on the line 
-        {
-            ft_printf("\n");  // start new line 
-            ft_printf("%s",m->map[i]); // start printing 
-            j++;
-        }
-        else
-            ft_printf("%s",m->map[i]);
-        i++;
-    }
-}
 
 void	ft_putstr_fd(char	*s, int fd)
 {
@@ -44,7 +22,6 @@ void	ft_putstr_fd(char	*s, int fd)
 	while (s[i])
 		ft_putchar_fd(s[i++], fd);
 }
-
 
 void	ft_putchar_fd(char c, int fd)
 {

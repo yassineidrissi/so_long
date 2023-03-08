@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 20:57:44 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/07 21:01:33 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:41:03 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,14 @@ void	test_up(t_map *map)
 			if (mp[i][j] == 'V' || mp[i][j] == 'P')
 				change_neighbor(mp, i, j);
 	}
+}
+
+t_loc	*position(int i, int j)
+{
+	t_loc	*pos;
+
+	pos = NULL;
+	pos->x = i;
+	pos->y = j;
+	return (pos);
 }
