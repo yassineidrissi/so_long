@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yaidriss <yaidriss@student1337.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:24:00 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/08 21:44:38 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/10 23:29:55 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	put_pix(t_map *m, int i, int j)
 	j * 48, i * 48);
 	else if (m->map[i][j] == 'P')
 		mlx_put_image_to_window(m->mlx, m->window, \
-	m->img_char, j * 48, i * 48);
+	m->img_player, j * 48, i * 48);
 	else if (m->exit.x == i && m->exit.y == j && !m->count_c)
 		mlx_put_image_to_window(m->mlx, m->window, \
 			m->img_door, j * 48, i * 48);
@@ -31,7 +31,7 @@ void	put_pix(t_map *m, int i, int j)
 		m->img_floor, j * 48, i * 48);
 	else if (m->map[i][j] == 'C')
 		mlx_put_image_to_window(m->mlx, m->window, \
-		m->img_clc, j * 48, i * 48);
+		m->img_colc, j * 48, i * 48);
 }
 
 void	draw(t_map *m)
@@ -62,15 +62,15 @@ void	ft_init_xlm(t_map *map)
 	&map->img_w, &map->img_h);
 	map->img_door = mlx_xpm_file_to_image(map->mlx, "./img/door.xpm", \
 	&map->img_w, &map->img_h);
-	map->img_char = mlx_xpm_file_to_image(map->mlx, "./img/player.xpm", \
+	map->img_player = mlx_xpm_file_to_image(map->mlx, "./img/player.xpm", \
 	&map->img_w, &map->img_h);
-	map->img_clc = mlx_xpm_file_to_image(map->mlx, "./img/coin.xpm", \
+	map->img_colc = mlx_xpm_file_to_image(map->mlx, "./img/coin.xpm", \
 	&map->img_w, &map->img_h);
-	map->img_eney = mlx_xpm_file_to_image(map->mlx, "./img/enemy.xpm", \
-	&map->img_w, &map->img_h);
+	if (!map->mlx || !map->window || !map->img || !map->img_floor || !map->img_colc)
+		handl_errors(1);
+}
 	//! need to add condition for protection!
 	//! add esc to exit 
-}
 
 int	ft_close(t_map *map)
 {

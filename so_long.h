@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yaidriss <yaidriss@student1337.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:25:49 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/08 21:48:25 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/10 23:27:53 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include "srcs/get_next_line.h"
-# include <mlx.h>
+# include "minilibx/mlx.h"
 
 typedef struct l_loc
 {
@@ -49,8 +49,8 @@ typedef struct map
 	void	*img;
 	void	*img_floor;
 	void	*img_door;
-	void	*img_char;
-	void	*img_clc;
+	void	*img_player;
+	void	*img_colc;
 	void	*img_eney;
 	int		img_w;
 	int		img_h;

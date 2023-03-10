@@ -12,18 +12,18 @@ CFLAGS			= -g -Wall -Wextra -Werror -I.
 
 NAME			= so_long
 
-# MLX				= minilibx/library/libmlx.a
+MLX				= minilibx/library/libmlx.a
 
 # %.o : %.c :
 # 		$(CC) $(CFLAGS) -c $< -o $^
 
 all:		1337_logo	$(NAME) 
 
-# $(MLX)			: 
-# 					@make -C minilibx
+$(MLX)			: 
+					@make -C minilibx
 
 $(NAME):	1337_logo	$(OBJS)
-				cc -lmlx -framework OpenGL -framework AppKit  $(OBJS) -o $(NAME)
+				cc $(MLX) -framework OpenGL -framework AppKit  $(OBJS) -o $(NAME)
 
 clean:
 				@$(RM) $(OBJS) 
