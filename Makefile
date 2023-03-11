@@ -9,27 +9,25 @@ OBJS			= $(SRCS:.c=.o)
 CC				= cc
 RM				= rm -f
 CFLAGS			= -g -Wall -Wextra -Werror -I.
-
 NAME			= so_long
 
-# MLX				= minilibx/library/libmlx.a
 
-# %.o : %.c :
-# 		$(CC) $(CFLAGS) -c $< -o $^
+%.o : %.c
+		@$(CC) $(CFLAGS) -c $< -o $@
 
 all:		1337_logo	$(NAME) 
 
-# $(MLX)			: 
-# 					@make -C minilibx
-
 $(NAME):	1337_logo	$(OBJS)
-				cc -lmlx -framework OpenGL -framework AppKit  $(OBJS) -o $(NAME)
-
+			@cc -lmlx -framework OpenGL -framework AppKit  $(OBJS) -o $(NAME)
+			@echo "\033[92m✅SO_LONG GENERATED YOU CAN STARTED✅\033[0m"
+			@echo "🎮 USE ./SO_LONG <MAP FILE NAME> 🎮"
 clean:
 				@$(RM) $(OBJS) 
-
+				@echo "\033[31m Delete object files🗑\033[31m"
+			
 fclean:			clean
 				@$(RM) $(NAME)
+				@echo "\033[31m Delete exucted file🗑\033[31m"
 
 re:				fclean $(NAME)
 
@@ -41,39 +39,6 @@ re:				fclean $(NAME)
 	@echo "\033[92m╚═╝██║░░░╚═══██╗░╚═══██╗░░░██╔╝░\033[0m██║╚██╔╝██║██╔══╝░░██║░░██║"
 	@echo "\033[92m███████╗██████╔╝██████╔╝░░██╔╝░░\033[0m██║░╚═╝░██║███████╗██████╔╝"
 	@echo "\033[92m╚══════╝╚═════╝░╚═════╝░░░╚═╝░░░\033[0m╚═╝░░░░░╚═╝╚══════╝╚═════╝░"
-	@echo "\033[92mCREATING .O FILES AND SO_LONG✅\033[0m"
+	@echo "\033[92mCREATING .O FILES AND SO_LONG⌛\033[0m"
 
-.PHONY: all fclean clean test 1337_logo
-
-
-# OBJS			= $(SRCS:.c=.o)
-# CC				= gcc
-# RM				= rm -rf
-# CFLAGS			= -g -Wall -Wextra -Werror -I.
-# NAME			= so_long
-# MLX				= minilibx/library/libmlx.a
-
-
-# $(MLX)			: 
-# 					make -C minilibx
-
-# $(NAME):		$(OBJS) $(MLX)
-# 				@cc $(MLX) -lmlx -framework OpenGL -framework AppKit  $(OBJS) -o $(NAME)
-
-# all:			$(NAME) 1337_logo
-
-
-# clean : 
-# 	@make -C minilibx clean
-# 	@$(RM) $(OBJS)
-# 	echo "\033[31mDELETE .O FILES🗑\033[0m"
-
-
-# fclean: clean
-# 	$(RM) $(MLX)
-# 	$(RM) minilibx/library
-# 	@$(RM) $(NAME)
-
-# re:				fclean $(NAME)
-
-# .PHONY:			all clean fclean re
+.PHONY: all fclean clean re 1337_logo
