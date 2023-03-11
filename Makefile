@@ -1,7 +1,7 @@
-SRCS = so_long.c error.c validation/validation.c \
+SRCS = so_long.c srcs/error.c validation/validation.c \
 validation/validation3.c validation/validation2.c  srcs/ft_split.c \
 srcs/get_next_line.c srcs/get_next_line_utils.c srcs/ft_strdup.c \
-print.c srcs/ft_itoa.c movement/movment.c movement/movemnet2.c srcs/ft_printf.c
+srcs/ft_itoa.c movement/movment.c movement/movemnet2.c srcs/ft_printf.c
 
 
 
