@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaidriss <yaidriss@student1337.com>        +#+  +:+       +#+        */
+/*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:24:12 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/10 23:31:59 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/11 15:08:55 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,8 @@ void	test_caraters(t_map *map)
 				map->count_c++;
 			else if (map->map[i][j] == 'E')
 				map->count_e++;
-			else
-				handl_errors(1);	
+			else if (map->map[i][j] != '0' && map->map[i][j] != '1')
+				handl_errors(1);
 		}
 	}
 	if (map->count_p != 1 || map->count_e != 1 || map->count_c < 1)

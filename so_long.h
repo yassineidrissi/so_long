@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaidriss <yaidriss@student1337.com>        +#+  +:+       +#+        */
+/*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:25:49 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/10 23:27:53 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/11 15:02:56 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include "srcs/get_next_line.h"
-# include "minilibx/mlx.h"
+# include <mlx.h>
 
 typedef struct l_loc
 {

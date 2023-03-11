@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaidriss <yaidriss@student1337.com>        +#+  +:+       +#+        */
+/*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:24:00 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/10 23:29:55 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/11 15:11:31 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,8 @@ void	ft_init_xlm(t_map *map)
 	&map->img_w, &map->img_h);
 	map->img_colc = mlx_xpm_file_to_image(map->mlx, "./img/coin.xpm", \
 	&map->img_w, &map->img_h);
-	if (!map->mlx || !map->window || !map->img || !map->img_floor || !map->img_colc)
+	if (!map->mlx || !map->window || !map->img \
+	|| !map->img_floor || !map->img_colc)
 		handl_errors(1);
 }
 	//! need to add condition for protection!
