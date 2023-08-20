@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:24:12 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/11 15:08:55 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:31:57 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ void	fill_map(t_map *map)
 {
 	char	*buffer;
 	char	*buffer2;
+	int		i;
 
+	i = -1;
 	map->next = (char *)1;
 	buffer = NULL;
 	while (map->next)
@@ -24,6 +26,9 @@ void	fill_map(t_map *map)
 		map->next = get_next_line(map->fd);
 		buffer = ft_my_strjoin(buffer, map->next, 1);
 	}
+	while (buffer[++i])
+		if (buffer[0] == '\n' || (buffer[i] == '\n' && buffer[i + 1] == '\n'))
+			handl_errors(3);
 	buffer2 = ft_strdup(buffer);
 	map->map = ft_split(buffer, '\n');
 	if (!map->map[0])

@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 23:18:17 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/07 22:55:43 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:12:25 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,6 @@ void	move_up(t_map *m, int i, int j, char self)
 	else if (m->exit.x == i - 1 && m->exit.y == j && !m->count_c)
 		exit(0);
 }
-		// else  if(m->exit.x == i - 1 && m->exit.y == j && m->count_c)
-		// {
-		// 		m->map[i][j] = '0';
-		// 		m->player.x = i - 1;
-		// 		m->player.y = j;
-		// 		m->map[i - 1][j] = self;
-		// 		m->map[i][j] = '0';
-		// }
 
 void	move_down(t_map *m, int i, int j, char self)
 {
@@ -65,12 +57,6 @@ void	move_down(t_map *m, int i, int j, char self)
 	else if (m->exit.x == i + 1 && m->exit.y == j && !m->count_c)
 		exit(0);
 }
-		// else  if(m->exit.x == i + 1 && m->exit.y == j && m->count_c)
-		// {
-		// 		m->map[i][j] = '0';
-		// 		m->map[i + 1][j] = self;
-		// 		m->map[i][j] = '0';
-		// }
 
 void	move_right(t_map *m, int i, int j, char self)
 {
@@ -122,9 +108,9 @@ int	move_char(int c, t_map *m)
 {
 	if (!m->count_c)
 		m->map[m->exit.x][m->exit.y] = 'E';
+	if (c == 53)
+		ft_close(m);
 	move_char_plus(c, m, m->player.x, m->player.y);
 	draw(m);
 	return (0);
 }
-// print_map(m);
-// ft_printf("im here insade the move_char \n");

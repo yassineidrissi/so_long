@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:25:49 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/11 15:02:56 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:06:29 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,12 +90,14 @@ void	test_down(t_map *map);
 int		ft_cmp(const char *s1, const char *s2);
 int		ft_printf(const char *format, ...);
 void	ft_free_double(char **p);
+
 ///******* error.c ***********************//
 void	handl_errors(int i);
+
 //******** print_map ********************//
 void	print_map(t_map *map);
-//********* Path*************************//
 
+//********* Path*************************//
 t_loc	ft_location(t_map *m, char c);
 int		exit_finder(t_map *m, int i);
 int		check_surrounding(t_map *m, int i);
@@ -104,6 +106,7 @@ void	test_down(t_map *map);
 int		find_path_map(char **mp);
 void	test_up(t_map *map);
 int		ft_close(t_map *map);
+
 //************* movment ***********************//
 int		move_char(int c, t_map *m);
 void	move_up(t_map *m, int current_loc, int width, char self);

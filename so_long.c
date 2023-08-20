@@ -6,7 +6,7 @@
 /*   By: yaidriss <yaidriss@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:24:00 by yaidriss          #+#    #+#             */
-/*   Updated: 2023/03/11 15:11:31 by yaidriss         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:13:13 by yaidriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ void	ft_init_xlm(t_map *map)
 	|| !map->img_floor || !map->img_colc)
 		handl_errors(1);
 }
-	//! need to add condition for protection!
 	//! add esc to exit 
 
 int	ft_close(t_map *map)
@@ -99,5 +98,3 @@ int	main(int ac, char **av)
 	mlx_loop(map.mlx);
 	return (0);
 }
-
-//! give me the name of the script to handl the norminette : C_formater_4
